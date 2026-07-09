@@ -1,0 +1,318 @@
+/* ============================================================
+   MOBILE (up to 619px)
+   ============================================================ */
+@media (max-width: 619px) {
+  :root {
+    --section-pad: clamp(64px, 16vw, 88px);
+  }
+
+  .section {
+    padding-inline: 20px;
+  }
+
+  .section__inner {
+    width: 100%;
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  /* NOTE: previously there was an extra max-width cap here
+     (min(354px, calc(100vw - 72px))) that fought with the
+     section's own 28px/20px padding-inline. On common phone
+     widths (375–428px) this shrank content noticeably narrower
+     than the available space, creating uneven side gutters and
+     cramped card padding. Removed — the section's own padding
+     is now the single source of truth for horizontal spacing. */
+
+  h1,
+  h2 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  h2 {
+    font-size: clamp(2.1rem, 8.6vw, 2.6rem);
+    line-height: 1.14;
+  }
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  .telugu {
+    font-size: 14.5px;
+    line-height: 1.85;
+  }
+
+  .eyebrow {
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .button {
+    min-height: 46px;
+    padding-inline: 20px;
+    font-size: 14px;
+  }
+
+  .hero__actions,
+  .contact__actions {
+    gap: 12px;
+  }
+
+  .countdown,
+  .gallery,
+  .family-grid,
+  .detail-grid {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .glass-panel,
+  .gallery__item,
+  .map-frame,
+  .countdown article,
+  .detail-card {
+    border-radius: 12px;
+  }
+
+  .invitation .section__inner,
+  .contact .section__inner,
+  .story__card,
+  .family-grid article,
+  .detail-card {
+    padding-inline: 20px;
+  }
+
+  .invitation .section__inner,
+  .contact .section__inner {
+    padding-block: 28px;
+  }
+
+  .parents {
+    margin-top: 18px;
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  .countdown {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .countdown article {
+    min-height: 100px;
+    padding: 14px 6px;
+  }
+
+  .countdown strong {
+    font-size: clamp(2.1rem, 10vw, 2.7rem);
+  }
+
+  .countdown span,
+  .family-grid span,
+  .detail-card span,
+  dt {
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+  }
+
+  .split {
+    gap: 20px;
+  }
+
+  .story__card {
+    padding-block: 24px;
+  }
+
+  dl {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  dd,
+  .family-grid strong,
+  .detail-card strong {
+    font-size: 19px;
+  }
+
+  .detail-card small {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .gallery {
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  /* Fixed pixel min-heights (368/430/350px) were tuned for one
+     device width and looked wrong (too tall/short, extra empty
+     space) on other phones. Switched to aspect-ratio so the
+     image box scales cleanly with the actual screen width. */
+  .gallery__item {
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .gallery__item img {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .gallery__item span {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 9px 11px;
+    font-size: 18px;
+  }
+
+  .family-grid,
+  .detail-grid {
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .detail-card {
+    gap: 6px;
+  }
+
+  .map-frame {
+    margin-block: 20px 16px;
+  }
+
+  .map-frame iframe {
+    height: min(50vh, 320px);
+  }
+
+  .signature {
+    margin-block: 28px;
+    font-size: clamp(2.6rem, 11vw, 3.4rem);
+  }
+
+  .footer {
+    /* respects the home-bar safe area on notched phones */
+    padding: 22px 20px calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero__photo-frame {
+    width: min(64vw, 300px);
+  }
+
+  /* These two were never overridden for mobile before, so the
+     desktop clamp (min 3.1rem / 4rem) could sit right at the
+     edge of overflowing on small phones. Given explicit
+     mobile-scaled values here instead. */
+  .hero__title {
+    font-size: clamp(2.6rem, 13.5vw, 4.4rem);
+    line-height: 1.05;
+  }
+
+  .splash h1 {
+    font-size: clamp(3.1rem, 15vw, 4.6rem);
+  }
+
+  .splash__subtitle {
+    margin: 4px 0 24px;
+  }
+
+  .music-toggle {
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ============================================================
+   TABLET / LARGER PHONES (620px+)
+   ============================================================ */
+@media (min-width: 620px) {
+  .countdown,
+  .detail-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery,
+  .family-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__actions,
+  .contact__actions {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ============================================================
+   DESKTOP (880px+)
+   ============================================================ */
+@media (min-width: 880px) {
+  .section {
+    padding-inline: 42px;
+  }
+
+  .split {
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+  }
+
+  .family-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero__photo-frame {
+    width: min(38vw, 380px);
+  }
+}
+
+/* ============================================================
+   SMALL PHONES (up to 420px) — extra tightening
+   ============================================================ */
+@media (max-width: 420px) {
+  .section {
+    padding-inline: 18px;
+  }
+
+  h2 {
+    font-size: clamp(1.95rem, 8.2vw, 2.3rem);
+    line-height: 1.16;
+  }
+
+  p {
+    font-size: 14.5px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero__actions,
+  .contact__actions {
+    width: 100%;
+  }
+
+  .countdown article {
+    min-height: 92px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.35rem, 13vw, 3.6rem);
+  }
+
+  .splash h1 {
+    font-size: clamp(2.8rem, 14.5vw, 3.8rem);
+  }
+
+  .hero__photo-frame {
+    width: min(70vw, 260px);
+  }
+}

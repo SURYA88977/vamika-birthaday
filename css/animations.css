@@ -1,0 +1,183 @@
+.ambient--stars::before,
+.ambient--stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(240, 202, 163, 0.8) 0 1px, transparent 1.4px);
+  background-size: 86px 86px, 132px 132px;
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+.ambient--stars::after {
+  opacity: 0.35;
+  animation-duration: 11s;
+  transform: translateY(30px);
+}
+
+.splash__ornament {
+  animation: ornamentPulse 2.8s ease-in-out infinite;
+}
+
+.hero__photo-frame::before,
+.gallery__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.22), transparent 56%);
+  transform: translateX(-130%);
+  animation: sheen 5.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  transform: scale(1);
+}
+
+.button.is-rippling::after {
+  animation: ripple 0.62s ease-out;
+}
+
+.gallery__item img,
+.button,
+.music-toggle {
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.035);
+}
+
+.button:hover,
+.music-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+}
+
+.float-heart,
+.float-balloon {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.54;
+}
+
+.float-heart {
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  animation: floatUp 12s linear forwards;
+}
+
+.float-heart::before,
+.float-heart::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.float-heart::before {
+  left: -5px;
+}
+
+.float-heart::after {
+  top: -5px;
+}
+
+.float-balloon {
+  width: 28px;
+  height: 36px;
+  border-radius: 50% 50% 44% 44%;
+  background: linear-gradient(135deg, var(--card), var(--accent));
+  animation: balloonDrift 16s linear forwards;
+}
+
+.float-balloon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 35px;
+  width: 1px;
+  height: 34px;
+  background: rgba(240, 202, 163, 0.45);
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.28;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.78;
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes ornamentPulse {
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 96px rgba(240, 202, 163, 0.42);
+  }
+}
+
+@keyframes sheen {
+  45%,
+  100% {
+    transform: translateX(135%);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(16);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(45deg) scale(0.7);
+  }
+  to {
+    transform: translateY(-120vh) rotate(45deg) scale(1.2);
+  }
+}
+
+@keyframes balloonDrift {
+  from {
+    transform: translate3d(0, 10vh, 0);
+  }
+  to {
+    transform: translate3d(26px, -120vh, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

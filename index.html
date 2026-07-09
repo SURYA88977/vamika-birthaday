@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A premium first birthday invitation for Samarthakurthi Vamika Bhavani."
+    />
+    <title>Vamika Bhavani's First Birthday Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/css/lightgallery-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css?v=5" />
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+    <div class="splash" id="splash" role="dialog" aria-label="Invitation opening">
+      <div class="splash__ornament"></div>
+      <p class="eyebrow">With love and blessings</p>
+      <h1>Vamika Bhavani</h1>
+      <p class="splash__subtitle">turns one</p>
+      <button class="button button--light" id="enterInvitation" type="button">
+        Open Invitation
+      </button>
+    </div>
+
+    <audio id="birthdayMusic" preload="metadata" loop>
+      <source src="assets/music/birthday-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Play music">
+      <i data-lucide="music-2"></i>
+    </button>
+
+    <main id="mainContent">
+      <section class="section hero" id="home">
+        <div class="ambient ambient--stars" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow reveal">First Birthday Celebration</p>
+          <h1 class="hero__title reveal">Samarthakurthi Vamika Bhavani</h1>
+          <p class="hero__date reveal">Tuesday, 21 July 2026 at 10:00 AM</p>
+          <div class="hero__photo-frame reveal">
+            <img
+              src="assets/images/hero-main.jpeg"
+              alt="Vamika Bhavani smiling inside a number one birthday prop"
+              class="hero__photo"
+              fetchpriority="high"
+            />
+            <span class="hero__glow" aria-hidden="true"></span>
+          </div>
+          <div class="hero__actions reveal">
+            <a class="button" href="#details">View Details</a>
+            <a class="button button--ghost" href="#venue">Get Directions</a>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+          <span></span>
+          <small>Scroll</small>
+        </div>
+      </section>
+
+      <section class="section invitation" id="invitation">
+        <div class="section__inner glass-panel">
+          <p class="eyebrow">An Invitation From Her Parents</p>
+          <h2>Our little princess is turning one</h2>
+          <p>
+            With hearts full of gratitude, we invite you to bless our daughter
+            Vamika Bhavani as she completes her first beautiful year.
+          </p>
+          <p class="telugu">
+            మా చిన్నారి వామిక భవాని మొదటి పుట్టినరోజు వేడుకకు మీ కుటుంబంతో విచ్చేసి
+            ఆశీర్వదించగలరు.
+          </p>
+          <div class="parents">
+            <span>Samarthakurthi Venkatesh</span>
+            <span>Kesanakurthi Surya Pujitha</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section countdown-section" id="countdown">
+        <div class="section__inner">
+          <p class="eyebrow">Counting Down To The Celebration</p>
+          <h2>A day wrapped in love is almost here</h2>
+          <div class="countdown" aria-live="polite">
+            <article><strong id="days">00</strong><span>Days</span></article>
+            <article><strong id="hours">00</strong><span>Hours</span></article>
+            <article><strong id="minutes">00</strong><span>Minutes</span></article>
+            <article><strong id="seconds">00</strong><span>Seconds</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story" id="story">
+        <div class="section__inner split">
+          <div>
+            <p class="eyebrow">About Our Little Princess</p>
+            <h2>Born on 21 July 2025, she filled our home with wonder</h2>
+          </div>
+          <div class="story__card glass-panel">
+            <p>
+              Every smile, every tiny step, and every curious glance has become a
+              memory we hold close. Her first birthday is not just a date; it is
+              the first chapter of a lifetime of blessings.
+            </p>
+            <dl>
+              <div><dt>Baby Name</dt><dd>Samarthakurthi Vamika Bhavani</dd></div>
+              <div><dt>Date of Birth</dt><dd>21 July 2025</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="section__inner">
+          <p class="eyebrow">Memory Gallery</p>
+          <h2>Two little albums of smiles, style, and sparkle</h2>
+          <div class="gallery" id="lightgallery">
+            <a href="assets/images/gallery-1.jpeg" class="gallery__item">
+              <img
+                src="assets/images/gallery-1.jpeg"
+                alt="Vamika in a collage wearing a cap and jacket"
+                loading="lazy"
+              />
+              <span>Little moments</span>
+            </a>
+            <a href="assets/images/gallery-2.jpeg" class="gallery__item">
+              <img
+                src="assets/images/gallery-2.jpeg"
+                alt="Vamika smiling in a red outfit collage"
+                loading="lazy"
+              />
+              <span>Bright smiles</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section family" id="family">
+        <div class="section__inner">
+          <p class="eyebrow">Blessed By Family</p>
+          <h2>With the love of grandparents and parents</h2>
+          <div class="family-grid">
+            <article class="glass-panel"><span>Father</span><strong>Samarthakurthi Venkatesh</strong></article>
+            <article class="glass-panel"><span>Mother</span><strong>Kesanakurthi Surya Pujitha</strong></article>
+            <article class="glass-panel"><span>Paternal Grandfather</span><strong>Samarthakurthi Kondalrao</strong></article>
+            <article class="glass-panel"><span>Paternal Grandmother</span><strong>Samarthakurthi Bhavani</strong></article>
+            <article class="glass-panel"><span>Maternal Grandfather</span><strong>Kesanakurthi Sudhakar</strong></article>
+            <article class="glass-panel"><span>Maternal Grandmother</span><strong>Kesanakurthi Lakshmi Prasanna</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section details" id="details">
+        <div class="section__inner">
+          <p class="eyebrow">Celebration Details</p>
+          <h2>We would be delighted to celebrate with you</h2>
+          <div class="detail-grid">
+            <article class="detail-card glass-panel">
+              <i data-lucide="calendar-days"></i>
+              <span>Date</span>
+              <strong>21 July 2026</strong>
+              <small>Tuesday</small>
+            </article>
+            <article class="detail-card glass-panel">
+              <i data-lucide="clock-3"></i>
+              <span>Time</span>
+              <strong>10:00 AM</strong>
+              <small>Please arrive with your blessings</small>
+            </article>
+            <article class="detail-card glass-panel">
+              <i data-lucide="map-pin"></i>
+              <span>Venue</span>
+              <strong>Sri Sai Alekhya Function Hall</strong>
+              <small>Katravulapalli, Andhra Pradesh 533437</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section venue" id="venue">
+        <div class="section__inner">
+          <p class="eyebrow">Venue</p>
+          <h2>Sri Sai Alekhya Function Hall</h2>
+          <p class="venue__address">
+            43PM+7M, Katravulapalli, Andhra Pradesh 533437
+          </p>
+          <div class="map-frame">
+            <iframe
+              title="Sri Sai Alekhya Function Hall map"
+              src="https://www.google.com/maps?q=Sri%20Sai%20Alekhya%20Function%20Hall%2C%20Katravulapalli%2C%20Andhra%20Pradesh%20533437&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <a
+            class="button"
+            href="https://maps.app.goo.gl/JkaJRPhFz6UF1kQB7"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Google Maps
+          </a>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section__inner glass-panel">
+          <p class="eyebrow">Contact</p>
+          <h2>Venkatesh Samarthakurthi</h2>
+          <p>For directions or event coordination, please reach us directly.</p>
+          <div class="contact__actions">
+            <a class="button" href="tel:+919490139747">
+              <i data-lucide="phone"></i>
+              Call 9490139747
+            </a>
+            <a
+              class="button button--ghost"
+              href="https://wa.me/919490139747"
+              target="_blank"
+              rel="noopener"
+            >
+              <i data-lucide="message-circle"></i>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section thanks" id="thanks">
+        <div class="section__inner">
+          <p class="eyebrow">Thank You</p>
+          <h2>Your presence will make this day unforgettable</h2>
+          <p>
+            We look forward to celebrating Vamika Bhavani's first birthday with
+            the people who mean the most to our family.
+          </p>
+          <p class="signature">With love, Vamika's family</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Vamika Bhavani turns one on 21 July 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
