@@ -5,8 +5,6 @@ import { initMusic } from "./music.js";
 import { celebrate } from "./confetti.js";
 
 const boot = () => {
-  document.body.classList.add("is-locked");
-
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -16,39 +14,26 @@ const boot = () => {
   initGallery();
   initAnimations();
   initDecor();
-  initSplash();
+  initHeroReveal();
   initRipples();
 };
 
-const initSplash = () => {
-  const splash = document.querySelector("#splash");
-  const enterButton = document.querySelector("#enterInvitation");
-
-  enterButton?.addEventListener("click", () => {
-    const timeline = window.gsap?.timeline({
-      defaults: { ease: "power3.inOut" },
-      onComplete: () => {
-        splash?.remove();
-        document.body.classList.remove("is-locked");
-        celebrate();
-      },
-    });
-
-    if (!timeline) {
-      splash?.remove();
-      document.body.classList.remove("is-locked");
-      return;
-    }
-
-    timeline
-      .to(splash, { opacity: 0, scale: 1.04, duration: 0.9 })
-      .fromTo(
-        ".hero .reveal",
-        { y: 36, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.13 },
-        "-=0.2"
-      );
+// Previously this reveal animation only ran after the user tapped
+// "Open Invitation" on the splash screen. Now that the splash is
+// gone, it plays automatically as soon as the page loads.
+const initHeroReveal = () => {
+  const timeline = window.gsap?.timeline({
+    defaults: { ease: "power3.inOut" },
+    onComplete: () => celebrate(),
   });
+
+  if (!timeline) return;
+
+  timeline.fromTo(
+    ".hero .reveal",
+    { y: 36, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1, stagger: 0.13 }
+  );
 };
 
 const initRipples = () => {
