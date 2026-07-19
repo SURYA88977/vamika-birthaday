@@ -87,7 +87,6 @@ main,
 }
 
 .section {
-  margin-top: -50px;
   min-height: 100svh;
   display: grid;
   place-items: center;
